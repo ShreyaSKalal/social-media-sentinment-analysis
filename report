@@ -1,0 +1,549 @@
+    VISVESVARAYA TECHNOLOGICAL UNIVERSITY
+
+
+
+
+BELAGAVI – 590018, Karnataka INTERNSHIP REPORT
+ON
+“Social Media Sentiment Analysis”
+Submitted in partial fulfilment for the award of degree(18CSI85)
+
+                          BACHELOR OF ENGINEERING IN      
+COMPUTER SCIENCE AND ENGINEERING
+
+                                                      PROJECT GROUP NAME:
+                                              “Innolearn Interns”
+                                                      Submitted by:
+                                                      NAME: SHREYA S KALAL
+                                                      USN: 1SB20CS096
+                                                        
+Conducted at 
+                                      
+                                    VARCONS TECHNOLOGIES PVT. LTD.
+                                                                   
+                                                                  
+					
+SRI SAIRAM COLLEGE OF ENGINEERING
+(Affiliated to Visvesvaraya Technological University, Belagavi & Approved by AICTE, New Delhi)
+Sai Leo Nagar, Anekal, Bengaluru-562106
+ 
+SRI SAIRAM COLLEGE OF ENGINEERING
+(Affiliated to Visvesvaraya Technological University, Belagavi & Approved by AICTE, New Delhi)
+Sai Leo Nagar, Anekal, Bengaluru-562106
+
+
+ 
+
+CERTIFICATE
+
+This is to certify that the Internship titled "Social Media Sentiment Analysis" carried out by Ms. SHREYA S KALAL, a bonafide student of Sri Sairam College Of Engineering, in partial fulfillment for the award of Bachelor of Engineering, in COMPUTER SCIENCE AND ENGINEERING BRANCH under Visvesvaraya Technological University, Belagavi, during the year 2023-2024. It is certified that all corrections/suggestions indicated have been incorporated in the report.
+
+The project report has been approved as it satisfies the academic requirements in respect of Internship prescribed for the course Internship / Professional Practice (18CSI85)
+
+
+
+Signature of Guide	Signature of HOD	Signature of Principal
+                                                                    	
+
+                                                                                                                          
+
+External Viva:
+
+Name of the Examiner	Signature with Date
+                                                                                                              
+                                                                                                              SHREYA S KALAL
+                                                                                                                 1SB20CS096
+1) 	 
+
+
+
+2) 	
+
+ 
+
+D E C L A R A T I O N
+
+I, SHREYA S KALAL, final year student of Computer Science Engineering Branch, Sri Sairam College Of Engineering -562106, declare that the Internship has been successfully completed, in VARCONS TECHNOLOGIES PVT. LTD. This report is submitted in partial fulfillment of the requirements for award of Bachelor Degree in Branch name, during the academic year 2023-2024.
+
+Date :	:
+Place : Bengaluru
+USN :  1SB20CS096
+NAME : SHREYA S KALAL 
+OFFER LETTER
+
+  
+A C K N O W L E D G E M E N T
+
+This Internship is a result of accumulated guidance, direction and support of several important persons. We take this opportunity to express our gratitude to all who have helped us to complete the Internship.
+
+We express our sincere thanks to our Principal, for providing us adequate facilities to undertake this Internship.
+
+We would like to thank our Head of Dept – branch code, for providing us an opportunity to carry out Internship and for his valuable guidance and support.
+
+We would like to thank our (Lab assistant name) Software Services for guiding us during the period of internship.
+
+We express our deep and profound gratitude to our guide, Guide name, Assistant/Associate Prof, for her keen interest and encouragement at every step in completing the Internship.
+
+We would like to thank all the faculty members of our department for the support extended during the course of Internship.
+
+We would like to thank the non-teaching members of our dept, for helping us during the Internship.
+
+Last but not the least, we would like to thank our parents and friends without whose constant help, the completion of Internship would have not been possible.
+
+NAME: SHREYA S KALAL
+USN:1SB20CS096
+
+ 
+
+ABSTRACT
+
+Social media platforms have become integral to modern communication, providing a vast repository of user-generated content that reflects diverse sentiments and opinions. This paper presents a comprehensive overview of sentiment analysis in the context of social media, highlighting the methods, trends, and challenges associated with this evolving field.
+
+Sentiment analysis, often referred to as opinion mining, involves the automated extraction and classification of sentiments expressed in textual, visual, or auditory content. In the realm of social media, sentiment analysis plays a pivotal role in understanding public sentiment, tracking trends, and aiding decision-making processes in various domains, including marketing, politics, and customer service.
+
+This paper explores the key methods employed in social media sentiment analysis, ranging from rule-based approaches to advanced machine learning techniques. It discusses the importance of data preprocessing, feature engineering, and domain-specific lexicons in improving sentiment analysis accuracy. Additionally, it delves into the challenges associated with sentiment analysis in social media, such as handling sarcasm, detecting context, and addressing data privacy concerns.
+
+The study also sheds light on emerging trends in the field, including the incorporation of multimodal data (text, images, and videos), the use of deep learning models, and the integration of sentiment analysis with broader natural language processing tasks. Furthermore, it discusses the ethical considerations surrounding sentiment analysis on social media, emphasizing the need for responsible AI practices.
+
+In conclusion, this paper provides a comprehensive overview of the state of the art in social media sentiment analysis, offering insights into its methodologies, current trends, and the challenges that researchers and practitioners face. As social media continues to shape public discourse and influence decision-making, sentiment analysis remains a critical tool for understanding and harnessing the power of collective sentiment in the digital age.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table of Contents
+
+
+Sl no	Description	Page no
+1	Company Profile	8
+2	About the Company	           9-10
+3
+Introduction	           11
+4
+System Analysis	           12-13
+5
+Requirement Analysis	           14-16
+6	Design Analysis
+           17-18
+7	Implementation
+19
+8	Snapshots	20-25
+9	Conclusion	26
+10	References	27
+
+
+	 
+
+
+CHAPTER 1                    
+COMPANY PROFILE
+A Brief History of Company
+Company, was incorporated with a goal “To provide high quality and optimal Technological Solutions to business requirements of our clients”. Every business is a different and has a unique business model and so are the technological requirements. They understand this and hence the solutions provided to these requirements are different as well. They focus on clients requirements and provide them with tailor made technological solutions. They also understand that Reach of their Product to its targeted market or the automation of the existing process into e-client and simple process are the key features that our clients desire from Technological Solution they are looking for and these are the features that we focus on while designing the solutions for their clients.
+Varcons Technologies is a leading provider of cutting-edge technologies and services, offering scalable solutions for businesses of all sizes. Founded by a group of friends who started by scribbling their ideas on a piece of paper, today we offer smart, innovative services to dozens of clients. We develop SaaS products, provide Corporate Seminars, Industrial trainings and much more.
+we strive to be the front runner in creativity and innovation in software development through their well-researched expertise and establish it as an out of the box software development company in Bangalore, India. As a software development company, they translate this software development expertise into value for their customers through their professional solutions.
+They understand that the best desired output can be achieved only by understanding the clients demand better. At our Company we work with them clients and help them to defiine their exact solution requirement. Sometimes even they wonder that they have completely redefined their solution or new application requirement during the brainstorming session, and here they position themselves as an IT solutions consulting group comprising of high caliber consultants.
+
+They believe that Technology when used properly can help any business to scale and achieve new heights of success. It helps Improve its efficiency, profitability, reliability; to put it in one sentence” Technology helps you to Delight your customers” and that is what we want to achieve.
+ 
+CHAPTER 2 ABOUT THE COMPANY
+
+We are a Technology Organization providing solutions for all web design and development, Researching and Publishing Papers to ensure the quality of most used ML Models, MYSQL, PYTHON Programming, Machine Learning, HTML, CSS, ASP.NET and LINQ. Meeting the ever-increasing automation requirements, Varcons Technologies Pvt. Ltd. specialize in ERP, Connectivity, SEO Services, Conference Management, effective web promotion and tailor-made software products, designing solutions best suiting clients requirements. The organization where they have a right mix of professionals as a stakeholders to help us serve our clients with best of our capability and with at par industry standards. They have young, enthusiastic, passionate and creative Professionals to develop technological innovations in the field of Mobile technologies, Web applications as well as Business and Enterprise solution. Motto of our organization is to “Collaborate with our clients to provide them with best Technological solution hence creating Good Present and Better Future for our client which will bring a cascading a positive effect in their business shape as well”. Providing a Complete suite of technical solutions is not just our tag line, it is Our Vision for Our Clients and for Us, We strive hard to achieve it.
+
+With the Right Software, Service and Analytics, Great Things Can Happen
+Smart solutions are at the core of all that we do at VCT. Our main goal is to find smart ways of using technology that will help build a better tomorrow for everyone, everywhere. SaaS offers a variety of advantages over traditional software licensing models and We here at VCT tend to include the key features of SaaS in everything we build.
+
+Built for Creatives, by Creatives
+At VCT, We make sure every product/service that we offer is built keeping in mind the practical usability of the product/Service, We're a startup focused on Creativity and Customizability, and We also provide subscription models for Software that we have already built, Since the application is already configured, the user has a ready-to-use application. This not only reduces installation and configuration time but also cuts down the time wasted on potential glitches linked to software deployment.
+
+
+
+
+
+
+           
+
+
+
+ Services provided by Varcons Technologies Pvt. Ltd.
+
+•	Core Python and Advanced Python
+•	Research and Development/Improvise of ML Models
+
+•	Web services and development
+
+•	Dot Net Framework
+
+•	Python
+
+•	Develop websites that behave and interact similar to Sophisticated software.  Information+Functionality=WaaS
+
+•	Analyze the way your users/customers interact with you/your business by gathering, studying, and understanding the consumer voice and their perception of the product/service to generate a report to help you make better market decisions.
+
+•	With a comprehensive range of services, We can guarantee your technology needs are not just met, but exceeded. We shall work with your Customers/users closely to understand the way your users/customers use/make use of Products/Services.
+
+•	We create API's and tools that help you automate any process with a host of features pertaining to the Device.
+
+•	Conference 
+
+•	Academic Project Guidance
+
+•	On The Job Training
+
+•	Software Training
+ 
+
+CHAPTER 3 INTRODUCTION
+
+Introduction to ML
+
+Machine Learning (ML) is a subset of artificial intelligence (AI) that revolutionizes computer capabilities by enabling them to learn and adapt from data. Unlike traditional programming, ML systems analyze vast datasets to identify patterns and relationships. They then use this knowledge to make predictions, classify information, or automate decisions. ML has widespread applications, from image recognition and natural language processing to fraud detection and recommendation systems. Its versatility and ability to handle complex tasks make it indispensable in today's data-driven world. As data continues to grow, ML's capacity to extract valuable insights and improve performance without human intervention remains a pivotal force in technology, science, and industry.
+
+
+Problem Statement
+
+Built a python application that asks for a keyword and you need to identify the the sentiment of that keyword in public. 
+Goal: Understand the working of Sentiment analysis and improve the accuracy. 
+
+
+
+
+
+
+
+
+
+
+
+
+CHAPTER 4 SYSTEM ANALYSIS
+
+1.	Existing System
+The existing system for social media sentiment analysis typically relies on a combination of off-the-shelf sentiment analysis tools and manual efforts. It may involve using basic sentiment analysis libraries like NLTK or spaCy for text analysis. Some organizations may also employ third-party sentiment analysis APIs, such as those offered by IBM Watson or Google Cloud Natural Language. However, these solutions have limitations in terms of accuracy, customizability, and real-time analysis. They often struggle with handling sarcasm, context, and slang, which are prevalent in social media content.
+
+
+2.	Proposed System
+The proposed system represents an upgraded and more advanced approach to social media sentiment analysis. It aims to address the limitations of the existing system by implementing the following improvements:
+
+1. Advanced Sentiment Analysis Algorithms: The proposed system would utilize state-of-the-art sentiment analysis algorithms, including deep learning models like LSTM (Long Short-Term Memory) or BERT (Bidirectional Encoder Representations from Transformers). These models offer better accuracy and can handle nuances in language.
+
+2. Multimodal Analysis: The system would incorporate multimodal analysis to analyze not only text but also images and videos. Deep learning models for computer vision and audio processing could be integrated to capture sentiment from diverse content types.
+
+3. Real-time Analysis: The proposed system would enable real-time sentiment analysis, allowing organizations to monitor and respond to sentiment trends on social media platforms as they unfold.
+
+4. Customization: Users would have the flexibility to customize sentiment analysis models to their specific domains and industries, improving accuracy for industry-specific terminology and context.
+
+5. Scalability: The system would be designed for scalability, enabling it to handle large volumes of social media data, even during peak usage periods.
+
+6. User-Friendly Interface: The proposed system would offer an intuitive user interface with interactive dashboards and visualization tools for users to explore sentiment trends and insights easily.
+
+7. Feedback Loop: A feedback loop mechanism would be implemented to continuously refine and enhance the sentiment analysis model based on user feedback and emerging language trends.
+
+8. Enhanced Security and Compliance: The system would prioritize data security and compliance with regulations like GDPR or HIPAA, ensuring the protection of user data and privacy.
+
+9. Integration: It would seamlessly integrate with other data analysis tools and systems to facilitate a cohesive data analytics environment.
+
+10. Regular Maintenance: The proposed system would undergo regular maintenance and updates to adapt to changing social media trends, language, and user behavior.
+
+
+                                    Objective of the System:
+
+The primary objective of the proposed social media sentiment analysis system is to provide advanced sentiment analysis capabilities for social media content. This includes enhanced accuracy, real-time monitoring, multimodal analysis (text, images, videos), customization, scalability, and a user-friendly interface. The system aims to help users gain deeper insights into public sentiment, respond to trends in real-time, and ensure data security and compliance. It will continuously evolve through user feedback and updates to stay relevant in the dynamic social media landscape, offering a comprehensive and adaptable tool for decision-makers and researchers.
+ 
+                                        CHAPTER-5 
+
+                                    REQUIREMENT ANALYSIS
+
+Hardware Requirement Specification
+1. Processor (CPU): A multi-core processor with a higher clock speed is beneficial for faster data processing. Consider CPUs from Intel or AMD.
+
+2. Memory (RAM): The amount of RAM required depends on the size of the datasets and the complexity of machine learning models. A minimum of 8GB is recommended, but larger datasets may require 16GB or more.
+
+3. Storage: SSDs (Solid State Drives) are preferred for faster data access and processing. Depending on data volume, you may need hundreds of GBs or more of storage.
+
+4. Graphics Processing Unit (GPU): For training deep learning models, a dedicated GPU from NVIDIA (e.g., GeForce RTX or Tesla) can significantly accelerate processing.
+
+5. Network Connectivity: A stable internet connection is essential for data acquisition, updates, and real-time analysis, especially if data is collected from social media platforms.
+
+6. Display: A high-resolution monitor is useful for data visualization and analysis.
+
+7. Backup and Redundancy: Implement backup solutions and redundant hardware configurations to ensure data reliability.
+
+8. Server Hardware (If Deployed on a Server): If the system is deployed on a server for scalability, consider server-grade hardware with sufficient CPU, RAM, and storage.
+
+9. Security: Invest in security measures, including firewalls and encryption, to protect sensitive data.
+
+10. Power Backup: Uninterruptible Power Supply (UPS) systems can prevent data loss due to power outages.
+
+The specific software and hardware requirements may vary based on the scale and complexity of your social media sentiment analysis system. Be sure to assess your project's needs and scalability requirements to make informed choices.
+Design and analysis for a social media sentiment analysis system involves careful planning and evaluation of various components to ensure accurate sentiment assessment from social media data. Here's an overview of the design and analysis process:
+
+
+Software Requirement Specification
+
+1. Operating System: The choice of operating system may vary based on your specific needs, but common options include Windows, macOS, or a Linux distribution (e.g., Ubuntu, CentOS).
+
+2. Programming Language: Depending on your development stack, you may need programming languages such as Python, Java, or JavaScript for building the sentiment analysis system.
+
+3. Development Environment: Use integrated development environments (IDEs) like Visual Studio Code, PyCharm, or Jupyter Notebook for coding and testing.
+
+4. Database Management: Consider using databases like PostgreSQL, MySQL, or NoSQL databases (e.g., MongoDB) for storing and managing data.
+
+5. Machine Learning Frameworks: If implementing machine learning models, you'll need frameworks like TensorFlow, PyTorch, or scikit-learn in Python.
+
+6. Web Framework (Optional): If you plan to create a web-based user interface, consider using web development frameworks like Django, Flask, or React.
+
+7. Text Analysis Libraries: Libraries like NLTK (Natural Language Toolkit), spaCy, and Gensim can be useful for text preprocessing and analysis.
+
+8. Image and Video Processing Tools: If implementing multimodal analysis, use libraries like OpenCV for image processing and FFmpeg for video analysis.
+
+9. Data Visualization Tools: Tools like Matplotlib, Seaborn, or D3.js can help create visualizations for interpreting sentiment analysis results.
+
+10. Version Control: Employ version control systems like Git for collaborative development and code management.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+CHAPTER 6 DESIGN & ANALYSIS
+Design:
+1. Requirements Analysis:
+   - Understand the objectives of sentiment analysis (e.g., brand monitoring, public opinion tracking).
+   - Determine the social media platforms to be analyzed (e.g., Twitter, Facebook, Instagram).
+   - Define the scope of analysis (e.g., specific topics, timeframes).
+   - Identify the target audience for sentiment insights (e.g., marketing teams, policymakers).
+
+2. Data Collection:
+   - Select data sources and APIs for accessing social media content.
+   - Implement data retrieval mechanisms, considering rate limits and data volume.
+   - Set up data preprocessing pipelines to clean and format incoming data.
+
+3. Sentiment Analysis Algorithms:
+   - Choose appropriate sentiment analysis techniques, such as rule-based, machine learning, or deep learning models.
+   - Develop or integrate sentiment analysis algorithms into the system.
+   - Train and fine-tune machine learning models using labeled data.
+
+4. Multimodal Analysis:
+   - If analyzing images and videos, integrate computer vision and audio processing modules.
+   - Implement deep learning models for image and video sentiment analysis.
+
+5. Real-time Analysis:
+   - Design real-time data processing and analysis pipelines.
+   - Implement data streaming and processing components for immediate sentiment assessment.
+
+6. Customization:
+   - Allow users to customize sentiment analysis models based on their specific domains or industries.
+   - Provide options for adjusting sentiment thresholds and criteria.
+
+7. User Interface:
+   - Develop a user-friendly dashboard or interface for users to interact with the system.
+   - Include visualization tools for presenting sentiment trends and insights.
+
+Analysis:
+
+1. Accuracy Assessment:
+   - Evaluate the accuracy of sentiment analysis algorithms using labeled datasets and metrics like precision, recall, and F1 score.
+   - Continuously monitor and improve the accuracy of sentiment predictions.
+
+2. Real-time Monitoring:
+   - Assess the system's ability to provide real-time sentiment insights.
+   - Measure response times for data ingestion, analysis, and presentation.
+
+3. Scalability:
+   - Analyze system performance under varying data loads and concurrent users.
+   - Implement load balancing and scalability features to handle increased demand.
+
+4. User Feedback:
+   - Gather feedback from users to identify areas for improvement in the system's usability and accuracy.
+   - Use feedback to fine-tune sentiment models and enhance user experience.
+
+5. Security and Compliance:
+   - Conduct security assessments to ensure data privacy and protection.
+   - Ensure compliance with data privacy regulations (e.g., GDPR) and ethical considerations.
+
+6. Continuous Improvement:
+   - Implement a feedback loop for model retraining and system updates based on evolving language trends and user requirements. 
+
+                                          CHAPTER 7
+                                 IMPLEMENTATION
+
+Implementation is the stage where the theoretical design is turned into a working system. The most crucial stage in achieving a new successful system and in giving confidence on the new system for the users that it will work efficiently and effectively.
+The system can be implemented only after thorough testing is done and if it is found to work according to the specification. It involves careful planning, investigation of the current system and it constraints on implementation, design of methods to achieve the changeover and an evaluation of change over methods a part from planning.
+Two major tasks of preparing the implementation are education and training of the users and testing of the system. The more complex the system being implemented, the more involved will be the system analysis and design effort required just for implementation.
+
+The implementation phase comprises of several activities. The required hardware and software acquisition is carried out. The system may require some software to be developed. For this, programs are written and tested. The user then changes over to his new fully tested system and the old system is discontinued.
+TESTING
+The testing phase is an important part of software development. It is the Information zed system will help in automate process of finding errors and missing operations and also a complete verification to determine whether the objectives are met and the user requirements are satisfied. Software testing is carried out in three steps:
+1.	The first includes unit testing, where in each module is tested to provide its correctness, validity and also determine any missing operations and to verify whether the objectives have been met. Errors are noted down and corrected immediately.
+2.	Unit testing is the important and major part of the project. So errors are rectified easily in particular module and program clarity is increased. In this project entire system is divided         into several modules and is developed individually. So unit testing is conducted to individual modules.
+3.	The second step includes Integration testing. It need not be the case, the software whose modules when run individually and showing perfect results, will also show perfect results when run as a whole. 
+
+CHAPTER 8 SNAPSHOTS
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+                  
+ 
+
+ 
+
+Final Result:
+ 
+                                         CONCLUSION
+
+The package was designed in such a way that future modifications can be done easily. The following conclusions can be deduced from the development of the project:
+
+
+	Automation of the entire system improves the efficiency
+
+
+	It provides a friendly graphical user interface which proves to be better when compared to the existing system.
+
+
+	It gives appropriate access to the authorized users depending on their permissions.
+
+
+	It effectively overcomes the delay in communications.
+
+
+	Updating of information becomes so easier
+
+
+	System security, data security and reliability are the striking features.
+
+
+	The System has adequate scope for modification in future if it is necessary.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+8.REFERENCE
+
+
+
+
+
+
+
+https://towardsdatascience.com/social-media-sentiment-analysis-49b395771197
+
+
+https://www.researchgate.net/publication/348872012_Sentiment_Analysis_with_Machine_Learning_Methods_on_Social_Media
+
+
+https://www.linkedin.com/advice/1/how-can-you-analyze-social-media-sentiment
+
+
+https://link.springer.com/article/10.1007/s13369-021-06227-w
+
+
+https://github.com/Social-Media-Sentiment-Analysis-Using-Machine-Learning
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
