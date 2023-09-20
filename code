@@ -1,0 +1,112 @@
+X_train = ["This was really awesome an awesome movie",
+           "Great movie! Ilikes it a lot",
+           "Happy Ending! Awesome Acting by hero",
+           "loved it!",
+           "Bad not upto the mark",
+           "Could have been better",
+           "really Dissapointed by the movie"]
+# X_test = "it was really awesome and really disspntd"
+
+y_train = ["positive","positive","positive","positive","negative","negative","negative"] # 1- Positive class, 0- negative class
+X_train # Reviews
+from nltk.tokenize import RegexpTokenizer
+# NLTK -> Tokenize -> RegexpTokenizer
+# Stemming
+# "Playing" -> "Play"
+# "Working" -> "Work"
+  from nltk.stem.porter import PorterStemmer
+# NLTK -> Stem -> Porter -> PorterStemmer
+
+from nltk.corpus import stopwords
+# NLTK -> Corpus -> stopwords
+# Downloading the stopwords
+import nltk
+nltk.download('stopwords')
+tokenizer = RegexpTokenizer(r"\w+")
+en_stopwords = set(stopwords.words('english'))
+ps = PorterStemmer()
+def getCleanedText(text):
+  text = text.lower()
+
+  # tokenizing
+  tokens = tokenizer.tokenize(text)
+  new_tokens = [token for token in tokens if token not in en_stopwords]
+  stemmed_tokens = [ps.stem(tokens) for tokens in new_tokens]
+  clean_text = " ".join(stemmed_tokens)
+  return clean_text
+  X_test = ["it was bad"]
+  X_clean = [getCleanedText(i) for i in X_train]
+xt_clean = [getCleanedText(i) for i in X_test]
+X_clean
+# Data before cleaning
+'''
+X_train = ["This was awesome an awesome movie",
+           "Great movie! Ilikes it a lot",
+           "Happy Ending! Awesome Acting by hero",
+           "loved it!",
+           "Bad not upto the mark",
+           "Could have been better",
+           "Dissapointed by the movie"]
+'''
+  from sklearn.feature_extraction.text import CountVectorizer
+cv = CountVectorizer(ngram_range = (1,2))
+# "I am PyDev" -> "i am", "am Pydev"
+  X_vec = cv.fit_transform(X_clean).toarray()
+  X_vec
+print(cv.get_feature_names_out())
+Xt_vect = cv.transform(xt_clean).toarray()
+Xt_vect
+from sklearn.naive_bayes import MultinomialNB
+mn = MultinomialNB()
+mn.fit(X_vec, y_train)
+y_pred = mn.predict(Xt_vect)
+y_pred
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.model_selection import cross_val_score
+from sklearn.tree import DecisionTreeClassifier
+from sklearn import datasets
+Wine = datasets.load_wine()
+    X = Wine.data
+    y = Wine.target
+ dtree = DecisionTreeClassifier()
+  print();
+print(cross_val_score(dtree, X, y, scoring="accuracy", cv = 7))
+mean_score = cross_val_score(dtree, X, y, scoring="accuracy", cv = 7).mean()
+std_score = cross_val_score(dtree, X, y, scoring="accuracy", cv = 7).std()
+print(mean_score)
+print(std_score)
+#import modules
+import warnings
+import pandas as pd
+import numpy as np
+from sklearn import model_selection
+from sklearn.linear_model import LogisticRegression
+from sklearn import datasets
+from sklearn.metrics import accuracy_score
+#ignore warnings
+warnings.filterwarnings('ignore')
+# Load digits dataset
+iris = datasets.load_iris()
+# # Create feature matrix
+X = iris.data
+# Create target vector
+y = iris.target
+#test size
+test_size = 0.33
+#generate the same set of random numbers
+seed = 7
+
+#Model instance
+model = LogisticRegression()
+#Evaluate model performance
+scoring = 'accuracy'
+results = model_selection.cross_val_score(model, X, y, scoring=scoring)
+print('Accuracy -val set: %.2f%% (%.2f)' % (results.mean()*100, results.std()))
+
+#split data
+X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_size=test_size, random_state=seed)
+#fit model
+model.fit(X_train, y_train)
+#accuracy on test set
+result = model.score(X_test, y_test)
+print("Accuracy - test set: %.2f%%" % (result*100.0))
